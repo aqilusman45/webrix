@@ -1,0 +1,31 @@
+# Define text file attributes.
+# - Treat them as text.
+# - Ensure no CRLF line-endings, neither on checkout nor on checkin.
+# - Detect whitespace errors.
+#   - Exposed by default in `git diff --color` on the CLI.
+#   - Validate with `git diff --check`.
+#   - Deny applying with `git apply --whitespace=error-all`.
+#   - Fix automatically with `git apply --whitespace=fix`.
+
+*         text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+
+
+
+# Define binary file attributes.
+# - Do not treat them as text, exclude from diffs
+
+*.gif     -text -diff linguist-generated=true
+*.ico     -text -diff linguist-generated=true
+*.jpeg    -text -diff linguist-generated=true
+*.jpg     -text -diff linguist-generated=true
+*.otf     -text -diff linguist-generated=true
+*.png     -text -diff linguist-generated=true
+*.svgz    -text -diff linguist-generated=true
+*.ttf     -text -diff linguist-generated=true
+*.zip     -text -diff linguist-generated=true
+*.gz      -text -diff linguist-generated=true
+*.tar.gz  -text -diff linguist-generated=true
+dist/**   -text -diff linguist-generated=true
+yarn.lock -text -diff linguist-generated=true
+*.tfstate -text -diff linguist-generated=true
+*.ejs.t   -linguist-detectable

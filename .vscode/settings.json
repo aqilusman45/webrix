@@ -1,0 +1,20 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "cSpell.words": ["librelabs", "distros"],
+
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "files.associations": {
+    "*.shot": "jest-snapshot"
+  },
+  "vsicons.associations.files": [
+    {
+      "icon": "jest_snapshot",
+      "extensions": [".ts.shot", ".tsx.shot", ".js.shot", ".jsx.shot"],
+      "extends": "jest_snapshot"
+    }
+  ]
+}

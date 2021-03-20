@@ -1,0 +1,36 @@
+{
+  "name": "webrix",
+  "version": "1.0.0",
+  "description": "System of bricks for faster development of webapps.",
+  "main": "index.js",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/librelabs/webrix.git"
+  },
+  "scripts": {
+    "lint:all": "yarn workspaces foreach -pt run lint",
+    "test:all": "yarn workspaces foreach -pt run test",
+    "clean:all": "yarn workspaces foreach -pt run clean",
+    "build:all": "yarn workspaces foreach -pt run build",
+    "verify:all": "yarn test:all && yarn clean:all && yarn build:all && yarn lint:all --max-warnings 0",
+    "version:all": "yarn workspaces foreach -pt version $0 && git commit -am \"v$0\" && git tag -a \"v$0\" -m \"v$0\"",
+    "purge:all": "yarn workspaces foreach -p run purge && rimraf './node_modules'"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/librelabs/webrix/issues"
+  },
+  "homepage": "https://github.com/librelabs/webrix#readme",
+  "workspaces": {
+    "packages": [
+      "ui-components/atoms/*",
+      "ui-components/molecules/*",
+      "ui-components/organisms/*",
+      "ui-components/templates/*",
+      "ui-components/pages/*",
+      "profiles/*",
+      "distros/*"
+    ]
+  }
+}
